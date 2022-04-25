@@ -27,7 +27,9 @@ public class Controller {
                 break;
             case "Division(/)":
                 if (num2!=0){
-                result = num1/num2;}
+                result = num1/num2;
+                notify="";}
+
                 else {
                     notify = "Khong chia duoc cho 0";
                 }

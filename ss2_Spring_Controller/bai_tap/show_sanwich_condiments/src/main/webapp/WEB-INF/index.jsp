@@ -12,16 +12,16 @@
   </head>
   <body>
   <h2>Sandwich Condiments</h2>
-  <form action="/save">
-    <table>
+  <form action="/save" method="get">
+    <table border="1">
       <tr>
-        <td><input type="checkbox" name="condiment" value="Lettuce">Lettuce</td>
-        <td><input type="checkbox" name="condiment" value="Tomato">Tomato</td>
-        <td><input type="checkbox" name="condiment" value="Mustard">Mustard</td>
-        <td><input type="checkbox" name="condiment" value="Sprouts">Sprouts</td>
+        <td style="background-color: green"><input type="checkbox" name="condiment" value="Lettuce">Lettuce</td>
+        <td style="background-color: chocolate"><input type="checkbox" name="condiment" value="Tomato">Tomato</td>
+        <td style="background-color: blueviolet"><input type="checkbox" name="condiment" value="Mustard">Mustard</td>
+        <td style="background-color: yellow"><input type="checkbox" name="condiment" value="Sprouts">Sprouts</td>
       </tr>
     </table>
-    <input type="submit" value="Save">
+    <input style="margin-top: 10px" type="submit" value="Order">
   </form>
   </body>
 </html>

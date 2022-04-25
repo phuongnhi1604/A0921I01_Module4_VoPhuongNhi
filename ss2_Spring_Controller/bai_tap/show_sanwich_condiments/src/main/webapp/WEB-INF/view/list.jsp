@@ -13,8 +13,8 @@
 </head>
 <body>
 <h3>Sandwich Condiments are checked: </h3>
-<c:forEach items="${condiments}" var="eat">
-    <p>${eat}</p>
+<c:forEach items="${condiments}" var="condiment">
+    <h4>${condiment}</h4>
 </c:forEach>
 </body>
 </html>
