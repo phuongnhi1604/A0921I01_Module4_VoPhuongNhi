@@ -18,21 +18,21 @@ public class DeclarationServiceImpl implements DeclarationService {
 
     @Override
     public List<Declaration> findAll() {
-        return null;
+        return declarationRepository.findAll();
     }
 
     @Override
     public void add(Declaration declaration) {
-
+        declarationRepository.add(declaration);
     }
 
     @Override
     public void update(Declaration declaration) {
-
+        declarationRepository.update(declaration);
     }
 
     @Override
     public Declaration findById(String id) {
-        return null;
+        return declarationRepository.findById(id);
     }
 }

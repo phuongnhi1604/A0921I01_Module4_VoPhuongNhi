@@ -14,7 +14,7 @@
 <body>
 <h3>Settings</h3>
 <a href="/email/showList">Back to list</a>
-<form:form method="post" action="update" modelAttribute="email">
+<form:form method="post" action="/email/setting" modelAttribute="email">
     <table>
         <tr>
             <td><form:hidden path="id"></form:hidden></td>

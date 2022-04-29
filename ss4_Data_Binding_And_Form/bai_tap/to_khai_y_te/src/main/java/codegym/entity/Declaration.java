@@ -25,7 +25,6 @@ public class Declaration {
         this.vehicle = vehicle;
         this.number_vehicle = number_vehicle;
         this.number_chair = number_chair;
-
         this.city_visited = city_visited;
     }
 

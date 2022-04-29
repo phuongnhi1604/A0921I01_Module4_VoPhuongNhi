@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @org.springframework.stereotype.Controller
-@RequestMapping("email/")
+@RequestMapping("/email")
 public class Controller {
     @Autowired
     private EmailService emailService;
 
-    @RequestMapping(value="showList", method=RequestMethod.GET)
+    @GetMapping("/showList")
     public String showList(Model model) {
         List<Letter> emailList = emailService.findAll();
         model.addAttribute("emailList",emailList);
         return "letter/list";
     }
 
-    @RequestMapping(value = "showForm/{id}", method = RequestMethod.GET)
+    @GetMapping( "/showForm/{id}")
     public String showForm(@PathVariable("id") String id, ModelMap model){
         String[] languages = {"English","Vietnamese","Japanese","Chinese"};
         String[] pageSizes = {"5","10","15","25","50","100"};
@@ -33,10 +33,10 @@ public class Controller {
         return "letter/setting";
     }
 
-    @PostMapping(value = "update")
+    @PostMapping( "/setting")
     public String update(@ModelAttribute("email") Letter letter){
         emailService.update(letter);
-        return "redirect:letter/list";
+        return "redirect:/email/showList";
     }
 
 
