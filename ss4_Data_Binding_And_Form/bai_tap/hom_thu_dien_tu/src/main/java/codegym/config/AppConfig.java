@@ -1,12 +1,14 @@
 package codegym.config;
 
 
+import codegym.formatter.EmailFormatter;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -31,7 +33,11 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         return viewResolver;
     }
 
-
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addFormatter(applicationContext.getBean(EmailFormatter.class));
+        super.addFormatters(registry);
+    }
 
     // Khai báo bean trong file config
 //    @Bean
