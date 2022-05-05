@@ -5,41 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af8aa22a-cae0-4738-928a-7102b115c917" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/config/AppInitiallizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/entity/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/repository/Impl/ProductRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/repository/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/service/Impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codegym/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/product/view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/java/codegym/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/java/codegym/config/AppInitiallizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/java/codegym/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/java/codegym/entity/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/java/codegym/service/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/java/codegym/service/Impl/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/webapp/WEB-INF/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/webapp/WEB-INF/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/webapp/WEB-INF/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/webapp/WEB-INF/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/webapp/WEB-INF/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/src/main/webapp/WEB-INF/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/java/codegym/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/java/codegym/config/AppInitiallizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/java/codegym/controller/SongController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/java/codegym/entity/Song.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/java/codegym/repository/SongRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/java/codegym/service/Impl/SongServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/java/codegym/service/SongService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/webapp/WEB-INF/music/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/webapp/WEB-INF/music/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/webapp/WEB-INF/music/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac/src/main/webapp/WEB-INF/music/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../ss2_Spring_Controller/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2_Spring_Controller/thuc_hanh/customer-management" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/bai_tap/to_khai_y_te/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/bai_tap/to_khai_y_te/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/build/classes/java/main/codegym/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/build/classes/java/main/codegym/AppConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/build/libs/upload_file-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/build/libs/upload_file-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/build/resources/main/upload_file.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/build/resources/main/upload_file.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4_Data_Binding_And_Form/thuc_hanh/upload_file/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +74,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../springdemo3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/bai_tap/ung_dung_nghe_nhac" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -195,6 +184,8 @@
       <workItem from="1651252048373" duration="543000" />
       <workItem from="1651289682588" duration="312000" />
       <workItem from="1651300044361" duration="9186000" />
+      <workItem from="1651744005589" duration="4338000" />
+      <workItem from="1651755153751" duration="15000" />
     </task>
     <servers />
   </component>
