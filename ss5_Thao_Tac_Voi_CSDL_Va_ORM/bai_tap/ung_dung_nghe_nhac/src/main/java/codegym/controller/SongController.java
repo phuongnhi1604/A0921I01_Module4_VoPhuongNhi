@@ -46,8 +46,8 @@ public class SongController {
         return "redirect:/song/list";
     }
 
-    @GetMapping("/delete")
-    public String delete(@RequestParam("id") int id, Model model){
+    @GetMapping("/{id}/delete")
+    public String delete(@PathVariable int id, Model model){
         model.addAttribute("song",service.findById(id));
         return "/music/delete";
     }

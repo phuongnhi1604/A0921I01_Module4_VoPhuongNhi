@@ -38,7 +38,7 @@ public class SongRepositoryImpl implements SongRepository {
     @Override
     public void delete(int id) {
         Song song = findById(id);
-        entityManager.refresh(song);
+        entityManager.remove(song);
     }
 
     @Override
