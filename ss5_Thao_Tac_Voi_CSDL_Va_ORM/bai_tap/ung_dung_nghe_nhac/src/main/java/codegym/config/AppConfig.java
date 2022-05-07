@@ -90,17 +90,16 @@ public class AppConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 //        super.addFormatters(registry);
 //    }
 
-    // Config hibernate
+     public DriverManagerDataSource getDataSource() {
+            DriverManagerDataSource datasource = new DriverManagerDataSource();
+            datasource.setDriverClassName("com.mysql.jdbc.Driver");
+            datasource.setUrl("jdbc:mysql://localhost:3306/song_management?createDatabaseIfNotExist=true");
+            datasource.setUsername("root");
+            datasource.setPassword("Pmdnh123!");
+            return datasource;
+        }
     // Step 1: config datasource (thông tin kết nối DB)
     @Bean
-    public DriverManagerDataSource getDataSource() {
-        DriverManagerDataSource datasource = new DriverManagerDataSource();
-        datasource.setDriverClassName("com.mysql.jdbc.Driver");
-        datasource.setUrl("jdbc:mysql://localhost:3306/song_management?createDatabaseIfNotExist=true");
-        datasource.setUsername("root");
-        datasource.setPassword("Pmdnh123!");
-        return datasource;
-    }
 
     // Hibernate config
     private final Properties hibernateProperties() {
