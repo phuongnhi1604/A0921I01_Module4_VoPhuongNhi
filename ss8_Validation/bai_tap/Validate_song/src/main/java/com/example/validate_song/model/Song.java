@@ -12,7 +12,6 @@ public class Song {
     private String name;
     private String singer;
     private String type;
-    private String path;
 
     public Song() {
     }
@@ -49,11 +48,5 @@ public class Song {
         this.type = type;
     }
 
-    public String getPath() {
-        return path;
-    }
 
-    public void setPath(String path) {
-        this.path = path;
-    }
 }

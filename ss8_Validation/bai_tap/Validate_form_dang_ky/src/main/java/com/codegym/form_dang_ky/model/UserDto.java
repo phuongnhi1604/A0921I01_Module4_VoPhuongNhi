@@ -11,10 +11,10 @@ import javax.validation.constraints.Pattern;
 public class UserDto implements Validator {
     private int id;
     @NotEmpty(message = "Không được để trống")
-    @Pattern(regexp = "^[a-zA-Z]{5,45}$", message = "Tên chưa đúng định dạnh")
+    @Pattern(regexp = "[a-zA-Z]{5,45}", message = "Tên chưa đúng định dạnh")
     private String firstName;
     @NotEmpty(message = "Không được để trống")
-    @Pattern(regexp = "^[a-zA-Z]{5,45}$", message = "Tên chưa đúng định dạng")
+    @Pattern(regexp = "[a-zA-Z]{5,45}", message = "Tên chưa đúng định dạng")
     private String lastName;
     @Pattern(regexp = "^(84|0[3|5|7|8|9])+([0-9]{8})$", message = "Số điện thoại chưa đúng định dạng")
     private String phoneNumber;

@@ -2,43 +2,40 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Create new song</title>
+    <title>Display all song</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        p{
-            color: red;
-            font-style: italic;
-        }
-    </style>
 </head>
 <body>
-
-<div class="container bg-light">
-    <h2>Create new Song</h2>
-    <form th:action="@{/song/create}" th:method="post" th:object="${songDto}">
-        <div class="form-group">
-            <label>Song Name:</label>
-            <input type="text" th:field="*{name}" class="form-control" placeholder="Enter Song Name">
-            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
-        </div>
-        <div class="form-group">
-            <label>Singer Name:</label>
-            <input type="text" th:field="*{singer}" class="form-control" placeholder="Enter Singer Name">
-            <p th:if="${#fields.hasErrors('singer')}" th:errors="*{singer}"></p>
-        </div>
-        <div class="form-group">
-            <label>Type:</label>
-            <input type="text" th:field="*{type}" class="form-control" placeholder="Enter Type of th song">
-            <p th:if="${#fields.hasErrors('type')}" th:errors="*{type}"></p>
-        </div>
-        <button type="submit" class="btn btn-warning mb-2">Save</button>
-    </form>
+<div class="container">
+    <div>
+        <h2>Display all song</h2>
+        <a th:href="@{/song/create}">Create new song</a>
+    </div>
+    <div>
+        <table class="table table-success table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Singer</th>
+                <th>Type</th>
+                <th>Edit</th>
+            </tr>
+            <tr th:each="song : ${songList}" th:object="${song}">
+                <td th:text="*{id}"></td>
+                <td th:text="*{name}"></td>
+                <td th:text="*{singer}"></td>
+                <td th:text="*{type}"></td>
+                <td><a th:href="@{/song/{id}/update/(id=*{id})}">Edit</a></td>
+            </tr>
+        </table>
+    </div>
 </div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

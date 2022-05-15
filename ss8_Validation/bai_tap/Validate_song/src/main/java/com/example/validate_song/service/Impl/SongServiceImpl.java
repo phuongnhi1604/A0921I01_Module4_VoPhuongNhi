@@ -6,10 +6,18 @@ import com.example.validate_song.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SongServiceImpl implements SongService {
     @Autowired
     private SongRepository songRepository;
+
+    @Override
+    public List<Song> findAll() {
+        return songRepository.findAll();
+    }
+
     @Override
     public void add(Song song) {
         songRepository.save(song);
