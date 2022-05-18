@@ -48,7 +48,7 @@ public class SongController {
     }
 
     @PostMapping("/update")
-    public String update(@Validated SongDto songDto, BindingResult bindingResult, Model model){
+    public String update(@Validated @ModelAttribute SongDto songDto, BindingResult bindingResult){
         if (bindingResult.hasFieldErrors()){
             return "/edit";
         }else {

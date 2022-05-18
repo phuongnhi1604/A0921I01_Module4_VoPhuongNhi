@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail the book</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div  class="justify-contain-center">
+        <h2>Detail the book</h2>
+    </div>
+    <div>
+        <a th:href="@{/library/list}" style="text-decoration: none; color: midnightblue">Back to the library</a>
+    </div>
+    <div class="justify-contain-center">
+        <div class="card" style="width: 40rem;">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${book.book_name}"></h5>
+                <h6 class="card-subtitle mb-2 text-muted" th:text="${book.author}"></h6>
+                <p class="card-text" th:text="${book.content}">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text font-weight-light" style="font-size: smaller" th:text="${book.publisher}">
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 30px">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-warning" style="border: none" data-toggle="modal" data-target="#exampleModal"
+                th:onclick="'javascript:infoBorrow('+${book.book_id}+')'">
+            Borrow
+        </button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form th:action="@{/book/borrow}" th:method="post">
+                <div class="modal-body">
+                    <p>Are you sure you want to borrow this book?</p>
+                    <input type="text" id="book_id" th:name="id" hidden>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-warning">Borrow</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function infoBorrow(id) {
+        document.getElementById("book_id").value = id;
+    }
+</script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
