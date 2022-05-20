@@ -16,38 +16,42 @@
         <h2 >Display all book in Library</h2>
     </div>
     <div>
-        <a th:href="@{/book/create}">Create new book</a>
+        <a th:href="@{/library/create}">Create new Library</a>
     </div>
-    <div>
-        <a th:href="@{/book/return}">Return the book</a>
-    </div>
+<!--    <div>-->
+<!--        <a th:href="@{/book/return}">Return the book</a>-->
+<!--    </div>-->
     <div>
         <table class="table">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
+                <th scope="col">Content</th>
+                <th scope="col">Author</th>
                 <th scope="col">Quality</th>
-                <th scope="col">View</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Borrow</th>
+                <th scope="col">Return</th>
+                <th scope="col">Delete</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="li : ${libraries}" th:object="${li}">
                 <th scope="row" th:text="*{id}"></th>
                 <td th:text="*{title}"></td>
+                <td th:text="*{content}"></td>
+                <td th:text="*{author}"></td>
                 <td th:text="*{quantity}"></td>
-                <td><a style="text-decoration: none" th:href="@{/book/{id}/view/(id=*{id})}">View</a></td>
+                <td th:text="*{publisher}"></td>
+                <td><a th:href="@{/library/borrow(id=*{id})}" class="btn btn-primary">Borrow</a></td>
+                <td><a th:href="@{/return(id=*{id})}" class="btn btn-primary">Return</a></td>
+                <td><a th:href="@{/library/{id}/delete(id=*{id})}" class="btn btn-primary">Delete</a></td>
             </tr>
             </tbody>
         </table>
-        <a th:href="@{'/library/list/'(page=${libraries.number - 1})}"
-           th:if="${libraries.hasPrevious()}">Previous</a>
-        <span th:text="${libraries.number + 1}"></span>/<span th:text="${libraries.totalPages}"></span>
-        <a th:href="@{'/library/list/'(page=${libraries.number + 1})}"
-           th:if="${libraries.hasNext()}">Next</a>
     </div>
 </div>
-
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

@@ -1,62 +1,50 @@
 package com.codegym.book_management.model;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Book {
     @Id
-    private int book_id;
-    private String book_name;
-    private String content;
-    private String author;
-    private String publisher;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String code;
     private boolean status;
 
-    @ManyToOne(targetEntity = Library.class)
+    @ManyToOne()
+    @JoinColumn(name = "library_id")
     private Library library;
 
     public Book() {
     }
 
-    public int getBook_id() {
-        return book_id;
+    public Book(String code, boolean status, Library library) {
+        this.code = code;
+        this.status = status;
+        this.library = library;
     }
 
-    public void setBook_id(int book_id) {
-        this.book_id = book_id;
+    public Book(String code, Library library) {
+        this.code = code;
+        this.library = library;
     }
 
-    public String getBook_name() {
-        return book_name;
+
+    public int getId() {
+        return id;
     }
 
-    public void setBook_name(String book_name) {
-        this.book_name = book_name;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getCode() {
+        return code;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public boolean isStatus() {
