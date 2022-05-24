@@ -18,7 +18,7 @@
             <div class="card" style="width: 16rem;">
                 <a th:href="@{/product/{id}/view/(id=*{id})}">
                     <img class="card-img-top"
-                         src="https://assets.flowerstore.vn/uploads/products/photos/oqDyHI9G1uTYW5mAfUcprEUkV6IKBts1Xxu5Zgcr.jpeg"
+                         th:src="@{*{path}}"
                          alt="Ảnh không hiển thị">
                     <div class="card-body">
                         <p class="card-text" th:text="*{name}"></p>
