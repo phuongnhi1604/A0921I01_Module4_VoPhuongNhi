@@ -2,6 +2,7 @@ package com.codegym.cart_management.model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public class Cart {
     private Map<Product,Integer> products = new HashMap<>();
@@ -64,4 +65,11 @@ public class Cart {
         }
         return payment;
     }
+
+    public void deleteProduct(Product product){
+        Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
+        products.replace(itemEntry.getKey(),itemEntry.getValue() -1);
+    }
+
 }
+
