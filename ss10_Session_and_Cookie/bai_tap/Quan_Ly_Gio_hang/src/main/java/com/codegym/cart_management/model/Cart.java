@@ -71,5 +71,9 @@ public class Cart {
         products.replace(itemEntry.getKey(),itemEntry.getValue() -1);
     }
 
+    public void deleteOneProduct(Product product){
+        Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
+        products.remove(itemEntry.getKey(),itemEntry.getValue());
+    }
 }
 

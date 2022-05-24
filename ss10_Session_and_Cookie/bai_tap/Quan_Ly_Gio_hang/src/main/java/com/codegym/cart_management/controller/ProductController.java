@@ -51,4 +51,10 @@ public class ProductController {
         return "redirect:/product/shop";
     }
 
+    @GetMapping("/{id}/delete")
+    public String deleteToCart(@PathVariable("id") Product product,
+                               @ModelAttribute Cart cart) {
+        cart.deleteOneProduct(product);
+        return "redirect:/shopping-cart";
+    }
 }
