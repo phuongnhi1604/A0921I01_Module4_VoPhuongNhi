@@ -1,4 +1,4 @@
-package com.codegym.blog_management.model;
+package com.codegym.blog_management.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

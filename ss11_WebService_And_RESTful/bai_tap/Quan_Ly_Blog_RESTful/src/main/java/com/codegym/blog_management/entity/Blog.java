@@ -1,4 +1,4 @@
-package com.codegym.blog_management.model;
+package com.codegym.blog_management.entity;
 
 import javax.persistence.*;
 
@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private String title;
     private String content;
     private String author;
@@ -19,6 +19,15 @@ public class Blog {
     public Blog() {
     }
 
+    public Blog(int id, String title, String content, String author, String postDate, Category category) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.author = author;
+        this.postDate = postDate;
+        this.category = category;
+    }
+
     public Category getCategory() {
         return category;
     }
@@ -27,11 +36,11 @@ public class Blog {
         this.category = category;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
