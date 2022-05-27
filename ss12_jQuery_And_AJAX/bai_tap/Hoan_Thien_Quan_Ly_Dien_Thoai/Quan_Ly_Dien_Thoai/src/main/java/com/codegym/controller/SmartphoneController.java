@@ -46,17 +46,17 @@ public class SmartphoneController {
     @GetMapping("/update/{id}")
     public ModelAndView getSmartPhoneById(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView("/phones/update");
-        modelAndView.addObject("smartphones", smartPhoneService.findAll());
         modelAndView.addObject("smartphone", smartPhoneService.findByID(id));
+        modelAndView.addObject("smartphones", smartPhoneService.findAll());
         return modelAndView;
     }
 
     @PutMapping("/update")
-    public ResponseEntity<SmartPhone> updateSmartphone(@ModelAttribute SmartPhone smartPhone) {
+    public ResponseEntity<SmartPhone> updateSmartphone(@RequestBody SmartPhone smartPhone) {
         if (smartPhone==null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        smartPhoneService.update(smartPhone.getId());
-        return new ResponseEntity<>(smartPhone, HttpStatus.NO_CONTENT);
+        smartPhoneService.update(smartPhone);
+        return new ResponseEntity<>(smartPhone, HttpStatus.OK);
     }
 }

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SmartPhoneRepository extends CrudRepository<SmartPhone, Long> {
-    @Query(value = "select * from SmartPhone where id= :id", nativeQuery = true)
+    @Query(value = "select * from smartphones where id= :id", nativeQuery = true)
     public SmartPhone findByID(@Param("id") Long id);
+
+
 }

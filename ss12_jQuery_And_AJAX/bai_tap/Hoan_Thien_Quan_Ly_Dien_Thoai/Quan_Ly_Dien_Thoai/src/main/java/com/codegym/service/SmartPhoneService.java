@@ -10,6 +10,6 @@ public interface SmartPhoneService {
     Optional<SmartPhone> findById(Long id);
     public SmartPhone findByID(Long id);
     SmartPhone save(SmartPhone smartPhone);
-    void update(Long id);
+    void update(SmartPhone smartPhone);
     void remove(Long id);
 }
