@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // $(document).ready(function () {
+        //     //sư kiện nào thực hiện Ajax
+        //     $('.update-smartphone').click(function (event) {
+        //         //lay du lieu
+        //         let a = $(this);
+        //         let smartphoneId = a.attr("href");
+        //         // goi ajax
+        //         $.ajax({
+        //             type: "POST",
+        //             //tên API
+        //             url: `/smartphones/update/${smartphoneId}`,
+        //             //xử lý khi thành công
+        //             success: function (data) {
+        //                 a.parent().parent().update();
+        //             }
+        //
+        //         });
+        //         //chặn sự kiện mặc định của thẻ
+        //         event.preventDefault();
+        //     });
+        // })
+
+        function updateSmartPhone() {
+            //lay du lieu
+            let id = $('#id').val();
+            let producer = $('#producer').val();
+            let model = $('#model').val();
+            let price = $('#price').val();
+            let Smartphone = {
+                id: id,
+                producer: producer,
+                model: model,
+                price: price
+            };
+            // goi ajax
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "PUT",
+                data: JSON.stringify(Smartphone),
+                //tên API
+                url: "/smartphones/update",
+                //xử lý khi thành công
+                success: successHandler
+
+            });
+            //chặn sự kiện mặc định của thẻ
+            event.preventDefault();
+        }
+    </script>
+</head>
+<body>
+<form id="update-smartphone">
+    <table th:object="${smartphone}">
+        <input type="text" id="id" th:field="*{id}" hidden>
+        <tr>
+            <td>Producer:</td>
+            <td><input type="text" id="producer" th:field="*{producer}"></td>
+        </tr>
+        <tr>
+            <td>Model:</td>
+            <td><input type="text" id="model" th:field="*{model}"></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input type="text" id="price" th:field="*{price}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Edit" onclick="updateSmartPhone()"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

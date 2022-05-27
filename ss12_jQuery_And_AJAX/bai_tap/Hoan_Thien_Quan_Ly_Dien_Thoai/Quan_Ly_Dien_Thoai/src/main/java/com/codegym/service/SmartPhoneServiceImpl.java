@@ -35,7 +35,7 @@ public class SmartPhoneServiceImpl implements SmartPhoneService{
     @Override
     public void update(Long id) {
         SmartPhone smartPhone = smartPhoneRepository.findByID(id);
-        smartPhoneRepository.update(smartPhone);
+        smartPhoneRepository.save(smartPhone);
     }
 
     @Override

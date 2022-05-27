@@ -30,5 +30,4 @@ public interface BlogRepository extends JpaRepository<Blog, Integer> {
     @Query(value = "select * from Blog where author like concat('%',:author,'%')", nativeQuery = true)
     List<Blog> findAllByAuthor(@Param("author") String author);
 
-
 }
