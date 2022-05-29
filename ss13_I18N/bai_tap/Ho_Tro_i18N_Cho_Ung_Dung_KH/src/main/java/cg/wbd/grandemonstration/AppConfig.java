@@ -144,7 +144,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     @Bean
     public LocaleResolver localeResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(new Locale("vi"));
+        localeResolver.setDefaultLocale(new Locale("en"));
         return localeResolver;
     }
 
