@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{template::head}">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+<body>
+<div th:replace="~{template::header3}"></div>
+<div th:replace="~{template::background}"></div>
+<div class="content">
+    <div class="form mt-4 bg-light">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-3 mt-3">
+                    <a class="btn btn-dark bg-dark" style="text-decoration: none; color: white"  th:href="@{/service/create}"><strong>Create new service</strong></a>
+                </div>
+                <div class="col-9">
+                    <form class="form-inline" style="margin-left: 120px" th:method="get" th:action="@{/service/list}">
+                        <div class="form-group mt-3 mb-3 mr-2">
+                            <label>Search service: </label>
+                        </div>
+                        <div class="form-group mx-sm-3 mt-3 mb-3">
+                            <label for="exampleInputPassword1" class="sr-only">Service Type</label>
+                            <select class="custom-select" th:name="key_service" id="exampleInputPassword1">
+                                <option value="" selected>Choose Service Type</option>
+                                <th:block th:each="s : ${serviceType}">
+                                    <option th:text="${s.service_type_name}" th:value="${s.service_type_id}"></option>
+                                </th:block>
+                            </select>
+                        </div>
+                        <div class="form-group mx-sm-3 mt-3 mb-3">
+                            <label for="exampleInputPassword1" class="sr-only">Rent Type</label>
+                            <select class="custom-select" th:name="rentType" id="exampleInputPassword2">
+                                <option value="" selected>Choose Rent Type</option>
+                                <th:block th:each="r : ${rentType}">
+                                    <option th:text="${r.rent_type_name}" th:value="${r.rent_type_id}"></option>
+                                </th:block>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-dark mt-3 mb-3 bg-dark">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+            <div class="mr-3 ml-3">
+                <table class="table table-hover table-fixed">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Area</th>
+                        <th>Cost</th>
+                        <th>Max People</th>
+                        <th>Rent Type</th>
+                        <th>Service Type</th>
+                        <th>Standard Room</th>
+                        <th>Description Other</th>
+                        <th>Pool Area</th>
+                        <th>Number of Floors</th>
+                    </tr>
+                    </thead>
+                    <!--Table head-->
+                    <!--Table body-->
+                    <tbody>
+                    <tr th:each="service : ${services}">
+                        <th scope="row" th:text="${service.service_id}"></th>
+                        <td th:text="${service.service_name}"></td>
+                        <td th:text="${service.service_area}"></td>
+                        <td th:text="${service.service_cost}"></td>
+                        <td th:text="${service.service_max_people}"></td>
+                        <td th:text="${service.rentType.rent_type_name}"></td>
+                        <td th:text="${service.serviceType.service_type_name}"></td>
+                        <td th:text="${service.standard_room}"></td>
+                        <td th:text="${service.description_other_convenience}"></td>
+                        <td th:text="${service.pool_area}"></td>
+                        <td th:text="${service.number_of_floors}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--Table-->
+                <nav class="justify-content-center">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a th:href="@{'/service/list/'(page=${services.number - 1},key_service=${key_service},key_rent=${key_rent})}"
+                               th:if="${services.hasPrevious()}">Previous</a>
+                        </li>
+                        <li class="page-item"><span th:text="${services.number + 1}"></span>/<span
+                                th:text="${services.totalPages}"></span></li>
+                        <li class="page-item">
+                            <a th:href="@{'/service/list/'(page=${services.number + 1},key_service=${key_service},key_rent=${key_rent})}"
+                               th:if="${services.hasNext()}">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

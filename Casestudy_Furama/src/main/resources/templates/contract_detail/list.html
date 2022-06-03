@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{template::head}">
+</head>
+<body>
+<div th:replace="~{template::header5}"></div>
+<div th:replace="~{template::background}"></div>
+<div class="content">
+    <div class="form mt-4 bg-light">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-3 mt-3 mb-3">
+                    <a class="btn btn-dark bg-dark" style="text-decoration: none; color: white"  th:href="@{/contractDetail/create}"><strong>Create new contractDetail</strong></a>
+                </div>
+            </div>
+        </div>
+        <div class="mr-3 ml-3">
+            <table class="table table-hover table-fixed">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Contract ID</th>
+                    <th>Attach Service Name</th>
+                    <th>Quantity</th>
+                </tr>
+                </thead>
+                <!--Table head-->
+                <!--Table body-->
+                <tbody>
+                <tr th:each="contractDetail : ${contractDetails}">
+                    <th scope="row" th:text="${contractDetail.contract_detail_id}"></th>
+                    <td th:text="${contractDetail.contract.contract_id}"></td>
+                    <td th:text="${contractDetail.attachService.attach_service_name}"></td>
+                    <td th:text="${contractDetail.quantity}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

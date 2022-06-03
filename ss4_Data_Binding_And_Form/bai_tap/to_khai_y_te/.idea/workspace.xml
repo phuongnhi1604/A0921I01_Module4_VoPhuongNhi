@@ -5,7 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edd30d08-c346-4a6d-84ee-47aa9d61fbaf" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/AttachService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/Contract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/ContractDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/CustomerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/Division.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/Dto/CustomerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/EducationDegree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/RentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/ServiceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/model/UserRoleKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/repository/CustomerTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/service/CustomerTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/service/Impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/java/com/codegym/furama_management/service/Impl/CustomerTypeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/resources/message.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/resources/static/bootstrap-4.6.1-dist/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Casestudy_Furama/src/main/resources/templates/template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../ss2_Spring_Controller/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2_Spring_Controller/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5_Thao_Tac_Voi_CSDL_Va_ORM/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_AOP_And_Exception_Handling/thuc_hanh/Bo_sung_aspect_log_cho_ung_dung_QLDSKH/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_AOP_And_Exception_Handling/thuc_hanh/Bo_sung_aspect_log_cho_ung_dung_QLDSKH/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_AOP_And_Exception_Handling/thuc_hanh/Su_dung_ExceptionHandler_QLKH/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_AOP_And_Exception_Handling/thuc_hanh/Su_dung_ExceptionHandler_QLKH/customer-management" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +82,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hom_thu_dien_tu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -160,6 +192,7 @@
       <workItem from="1651218684489" duration="3975000" />
       <workItem from="1651222851981" duration="369000" />
       <workItem from="1651235797399" duration="4137000" />
+      <workItem from="1653999617882" duration="21000" />
     </task>
     <servers />
   </component>

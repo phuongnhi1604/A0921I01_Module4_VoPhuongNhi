@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{template::head}">
+<body>
+<div th:replace="~{template::header5}"></div>
+<div th:replace="~{template::background}"></div>
+<div class="content">
+    <div class="form mt-4 bg-light">
+        <div class="container">
+            <div class="row mt-5 mb-1 justify-content-center">
+                <h3>Create new contract detail</h3>
+            </div>
+            <div>
+                <form th:action="@{/contractDetail/create}" th:method="post" th:object="${contractDetailDto}">
+                    <input type="text" th:field="${contractDetailDto.contract_detail_id}" hidden>
+                    <div class="row d-flex">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Contract</label>
+                                <select class="custom-select" th:field="*{contract}">
+                                    <option value="" selected>Choose Contract ID</option>
+                                    <th:block th:each="c : ${contracts}">
+                                        <option th:value="${c.contract_id}" th:text="${c.contract_id}"></option>
+                                    </th:block>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Employee</label>
+                                <select class="custom-select" th:field="*{attachService}">
+                                    <option value="" selected>Choose Employee ID</option>
+                                    <th:block th:each="a : ${attachServices}">
+                                        <option th:value="${a.attach_service_id}" th:text="${a.attach_service_name}"></option>
+                                    </th:block>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Quantity</label>
+                                <input type="text" class="form-control" th:field="*{quantity}"
+                                       placeholder="Enter quantity">
+                                <p class="error" th:if="${#fields.hasErrors('quantity')}"
+                                   th:errors="*{quantity}"></p>
+                            </div>
+                            <button type="submit" class="btn btn-dark bg-dark w-50">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

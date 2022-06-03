@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{template::head}">
+<body>
+<div th:replace="~{template::header3}"></div>
+<div th:replace="~{template::background}"></div>
+<div class="content">
+    <div class="form mt-4 bg-light">
+        <div class="container">
+            <div class="row mt-5 mb-1 justify-content-center">
+                <h3>Create new service</h3>
+            </div>
+            <div>
+                <form th:action="@{/service/create}" th:method="post" th:object="${serviceDto}">
+                    <input type="text" th:field="*{service_id}" hidden>
+                    <div class="row d-flex">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Service Name</label>
+                                <input type="text" class="form-control" th:field="*{service_name}" placeholder="Enter service name">
+                                <p class="error" th:if="${#fields.hasErrors('service_name')}" th:errors="*{service_name}"></p>
+                            </div>
+                            <div class="form-group">
+                                <label>Area</label>
+                                <input type="text" class="form-control" th:field="*{service_area}" placeholder="Enter birthday">
+                                <p class="error" th:if="${#fields.hasErrors('service_area')}" th:errors="*{service_area}"></p>
+                            </div>
+                            <div class="form-group">
+                                <label>Cost</label>
+                                <input type="text" class="form-control" th:field="*{service_cost}" placeholder="Enter ID card">
+                                <p class="error" th:if="${#fields.hasErrors('service_cost')}" th:errors="*{service_cost}"></p>
+                            </div>
+                            <div class="form-group">
+                                <label>Max People</label>
+                                <input type="text" class="form-control" th:field="*{service_max_people}" placeholder="Enter salary">
+                                <p class="error" th:if="${#fields.hasErrors('service_max_people')}" th:errors="*{service_max_people}"></p>
+                            </div>
+                            <div class="form-group">
+                                <label>Rent Type</label>
+                                <select class="custom-select" th:field="*{rentType}">
+                                    <option value="" selected>Choose Rent Type</option>
+                                    <th:block th:each="r : ${rentType}">
+                                        <option th:value="${r.rent_type_id}" th:text="${r.rent_type_name}"></option>
+                                    </th:block>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Service Type</label>
+                                <select class="custom-select" th:field="*{serviceType}">
+                                    <option value="" selected>Choose Position</option>
+                                    <th:block th:each="s : ${serviceType}">
+                                        <option th:value="${s.service_type_id}" th:text="${s.service_type_name}"></option>
+                                    </th:block>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Standard Room</label>
+                                <input type="text" class="form-control" th:field="*{standard_room}" placeholder="Enter Standard Room">
+                                <p class="error" th:if="${#fields.hasErrors('standard_room')}" th:errors="*{standard_room}"></p>
+                            </div>
+                            <div class="form-group">
+                                <label>Description Other</label>
+                                <input type="text" class="form-control" th:field="*{description_other_convenience}" placeholder="Enter description">
+                                <p class="error" th:if="${#fields.hasErrors('description_other_convenience')}" th:errors="*{description_other_convenience}"></p>
+                            </div>
+                            <div class="form-group">
+                                <label>Pool Area</label>
+                                <input type="text" class="form-control" th:field="*{pool_area}" placeholder="Enter Pool area">
+                                <p class="error" th:if="${#fields.hasErrors('pool_area')}" th:errors="*{pool_area}"></p>
+                            </div>
+                            <div class="form-group">
+                                <label>Number of Floors</label>
+                                <input type="text" class="form-control" th:field="*{number_of_floors}" placeholder="Enter Number of floors">
+                                <p class="error" th:if="${#fields.hasErrors('number_of_floors')}" th:errors="*{number_of_floors}"></p>
+                            </div>
+                            <button type="submit" class="btn btn-dark bg-dark w-50">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
