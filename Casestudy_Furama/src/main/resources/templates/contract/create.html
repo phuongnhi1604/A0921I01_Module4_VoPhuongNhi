@@ -17,22 +17,22 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Start Date</label>
-                                <input type="date" class="form-control" th:field="*{contract_start_date}">
+                                <input type="date" class="form-control" th:field="${contractDto.contract_start_date}">
                             </div>
                             <div class="form-group">
                                 <label>End Date</label>
-                                <input type="date" class="form-control" th:field="*{contract_end_date}">
+                                <input type="date" class="form-control" th:field="${contractDto.contract_end_date}">
                             </div>
                             <div class="form-group">
                                 <label>Deposit</label>
-                                <input type="text" class="form-control" th:field="*{contract_deposit}"
+                                <input type="text" class="form-control" th:field="${contractDto.contract_deposit}"
                                        placeholder="Enter deposit">
                                 <p class="error" th:if="${#fields.hasErrors('contract_deposit')}"
                                    th:errors="${contractDto.contract_deposit}"></p>
                             </div>
                             <div class="form-group">
                                 <label>Total money</label>
-                                <input type="text" class="form-control" th:field="*{contract_total_money}"
+                                <input type="text" class="form-control" th:field="${contractDto.contract_total_money}"
                                        placeholder="Enter total money">
                                 <p class="error" th:if="${#fields.hasErrors('contract_total_money')}"
                                    th:errors="${contractDto.contract_total_money}"></p>
@@ -41,7 +41,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label>Employee</label>
-                                <select class="custom-select" th:field="*{employee}">
+                                <select class="custom-select" th:field="${contractDto.employee}">
                                     <option value="" selected>Choose Employee ID</option>
                                     <th:block th:each="e : ${employees}">
                                         <option th:value="${e.employee_id}" th:text="${e.employee_name}"></option>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Customer</label>
-                                <select class="custom-select" th:field="*{customer}">
+                                <select class="custom-select" th:field="${contractDto.customer}">
                                     <option value="" selected>Choose Customer Code</option>
                                     <th:block th:each="c : ${customers}">
                                         <option th:value="${c.customer_id}" th:text="${c.customer_code}"></option>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Service</label>
-                                <select class="custom-select" th:field="*{service}">
+                                <select class="custom-select" th:field="${contractDto.service}">
                                     <option value="" selected>Choose Service ID</option>
                                     <th:block th:each="s : ${services}">
                                         <option th:value="${s.service_id}" th:text="${s.service_name}"></option>

@@ -2,8 +2,7 @@ package com.codegym.furama_management.controller;
 
 import com.codegym.furama_management.model.Contract;
 import com.codegym.furama_management.model.Customer;
-import com.codegym.furama_management.model.Dto.ContractDto;
-import com.codegym.furama_management.model.Dto.CustomerDto;
+import com.codegym.furama_management.dto.ContractDto;
 import com.codegym.furama_management.model.Employee;
 import com.codegym.furama_management.model.Service;
 import com.codegym.furama_management.service.ContractService;

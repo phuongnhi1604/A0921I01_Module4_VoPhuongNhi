@@ -1,15 +1,18 @@
-package com.codegym.furama_management.model.Dto;
+package com.codegym.furama_management.dto;
 
 import com.codegym.furama_management.model.AttachService;
 import com.codegym.furama_management.model.Contract;
-import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import javax.validation.constraints.Min;
 
-public class ContractDetailDto implements Validator {
+
+public class ContractDetailDto {
+    @Min(value = 1, message = "Phai nhap so duong.")
     private int contract_detail_id;
     private Contract contract;
     private AttachService attachService;
+    @Min(value = 1, message = "Phai nhap so duong.")
     private int quantity;
 
     public ContractDetailDto() {
@@ -47,16 +50,4 @@ public class ContractDetailDto implements Validator {
         this.quantity = quantity;
     }
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return false;
-    }
-
-    @Override
-    public void validate(Object target, Errors errors) {
-        ContractDetailDto contractDetailDto = (ContractDetailDto) target;
-        if (contractDetailDto.getQuantity() <= 0){
-            errors.rejectValue("quantity","number.compare","Bị lỗi");
-        }
-    }
 }

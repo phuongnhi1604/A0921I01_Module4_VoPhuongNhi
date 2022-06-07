@@ -1,16 +1,20 @@
-package com.codegym.furama_management.model.Dto;
+package com.codegym.furama_management.dto;
 
 import com.codegym.furama_management.model.Customer;
 import com.codegym.furama_management.model.Employee;
 import com.codegym.furama_management.model.Service;
-import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-public class ContractDto implements Validator {
+import javax.validation.constraints.Min;
+
+
+public class ContractDto {
     private int contract_id;
     private String contract_start_date;
     private String contract_end_date;
+    @Min(value = 1, message = "Phai nhap so duong.")
     private double contract_deposit;
+    @Min(value = 1, message = "Phai nhap so duong.")
     private double contract_total_money;
     private Employee employee;
     private Customer customer;
@@ -83,19 +87,4 @@ public class ContractDto implements Validator {
         this.service = service;
     }
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return false;
-    }
-
-    @Override
-    public void validate(Object target, Errors errors) {
-         ContractDto contractDto = (ContractDto) target;
-        if (contractDto.getContract_deposit() <= 0){
-            errors.rejectValue("contract_deposit","number.compare","Bị lỗi");
-        }
-        if (contractDto.getContract_total_money() <= 0){
-            errors.rejectValue("contract_total_money","number.compare","Bị lỗi");
-        }
-    }
 }

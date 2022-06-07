@@ -2,9 +2,11 @@ package com.codegym.furama_management.controller;
 
 import com.codegym.furama_management.model.Customer;
 import com.codegym.furama_management.model.CustomerType;
-import com.codegym.furama_management.model.Dto.CustomerDto;
+import com.codegym.furama_management.dto.CustomerDto;
+import com.codegym.furama_management.model.User;
 import com.codegym.furama_management.service.CustomerService;
 import com.codegym.furama_management.service.CustomerTypeService;
+import com.codegym.furama_management.service.CustomerUseService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,10 +18,16 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
+    @ModelAttribute("user")
+    public User setupUser(){
+        return new User();
+    }
+
     @Autowired
     private CustomerService customerService;
 
@@ -89,4 +97,10 @@ public class CustomerController {
             return "redirect:/customer/list";
         }
     }
+
+//    @GetMapping("/useService")
+//    public String listUseService(Model model){
+//        model.addAttribute("customerUserServices",customerUseService.findAllCustomerUseService());
+//        return "customer/useService";
+//    }
 }

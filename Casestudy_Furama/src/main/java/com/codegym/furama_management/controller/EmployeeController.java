@@ -1,8 +1,7 @@
 package com.codegym.furama_management.controller;
 
 import com.codegym.furama_management.model.*;
-import com.codegym.furama_management.model.Dto.CustomerDto;
-import com.codegym.furama_management.model.Dto.EmployeeDto;
+import com.codegym.furama_management.dto.EmployeeDto;
 import com.codegym.furama_management.service.DivisionService;
 import com.codegym.furama_management.service.EducationDegreeService;
 import com.codegym.furama_management.service.EmployeeService;

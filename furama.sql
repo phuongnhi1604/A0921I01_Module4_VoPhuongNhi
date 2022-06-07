@@ -18,3 +18,18 @@ insert into employee value(1,'Da nang','2001-12-12','nhi@gmail.com','1232352362'
 
 insert into service_type value(1,'villa');
 insert into rent_type value(1,1221,'ngay');
+
+insert into attach_service values(1,'110000','Karaoke','Trong',5),(2,'120000','Massage','Trong',7);
+
+DELIMITER $$
+CREATE PROCEDURE get_all_customer_use_service()
+BEGIN
+    select cus.customer_id,cus.customer_name,cus.customer_birthday,cus.customer_gender,cus.customer_id_card,cus.customer_phone,cus.customer_email,cus.customer_address,atsv.attach_service_name,sv.service_name
+	from ((((customer as cus left join contract as ct on cus.customer_id=ct.customer_id)
+	join service sv on sv.service_id = ct.service_id)
+	left join contract_detail as ctde on ct.contract_id=ctde.contract_id)
+	left join attach_service atsv on atsv.attach_service_id = ctde.attach_service_id
+	);
+END;
+
+call get_all_customer_use_service();

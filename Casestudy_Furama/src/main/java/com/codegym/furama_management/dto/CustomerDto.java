@@ -1,4 +1,4 @@
-package com.codegym.furama_management.model.Dto;
+package com.codegym.furama_management.dto;
 
 import com.codegym.furama_management.model.CustomerType;
 

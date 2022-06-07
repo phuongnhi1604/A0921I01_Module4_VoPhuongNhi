@@ -1,8 +1,7 @@
 package com.codegym.furama_management.controller;
 
 import com.codegym.furama_management.model.*;
-import com.codegym.furama_management.model.Dto.ContractDetailDto;
-import com.codegym.furama_management.model.Dto.ContractDto;
+import com.codegym.furama_management.dto.ContractDetailDto;
 import com.codegym.furama_management.service.AttachServiceService;
 import com.codegym.furama_management.service.ContractDetailService;
 import com.codegym.furama_management.service.ContractService;

@@ -1,16 +1,16 @@
-package com.codegym.furama_management.model.Dto;
+package com.codegym.furama_management.dto;
 
 import com.codegym.furama_management.model.*;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import org.springframework.validation.annotation.Validated;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmployeeDto implements Validator {
+public class EmployeeDto {
     private int employee_id;
 
     @NotBlank(message = "Không được để trống")
@@ -22,6 +22,7 @@ public class EmployeeDto implements Validator {
     @Pattern(regexp = "^[0-9]{10,12}$", message = "CMND chưa đúng định dạng")
     private String employee_id_card;
 
+    @Min(value = 1, message = "Phai nhap so duong.")
     private double employee_salary;
 
     @NotBlank(message = "Không được để trống")
@@ -149,16 +150,4 @@ public class EmployeeDto implements Validator {
         this.contractList = contractList;
     }
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return false;
-    }
-
-    @Override
-    public void validate(Object target, Errors errors) {
-        EmployeeDto employeeDto = (EmployeeDto) target;
-        if (employeeDto.getEmployee_salary() < 0){
-            errors.rejectValue("employee_salary","salary.compare","Bị lỗi");
-        }
-    }
 }

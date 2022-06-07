@@ -1,4 +1,4 @@
-package com.codegym.furama_management.model.Dto;
+package com.codegym.furama_management.dto;
 
 import com.codegym.furama_management.model.Contract;
 import com.codegym.furama_management.model.RentType;
@@ -6,26 +6,31 @@ import com.codegym.furama_management.model.ServiceType;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceDto implements Validator {
+public class ServiceDto {
     private int service_id;
     @NotBlank(message = "Không được để trống")
     @Pattern(regexp = "[a-zA-Z0-9\\s]{3,60}", message = "Tên chứa kí tự khác hoặc quá dài")
     private String service_name;
-
+    @Min(value = 1, message = "Phai nhap so duong.")
     private int service_area;
+    @Min(value = 1, message = "Phai nhap so duong.")
     private double service_cost;
+    @Min(value = 1, message = "Phai nhap so duong.")
     private int service_max_people;
     private RentType rentType;
     private ServiceType serviceType;
 
     private String standard_room;
     private String description_other_convenience;
+    @Min(value = 1, message = "Phai nhap so duong.")
     private double pool_area;
+    @Min(value = 1, message = "Phai nhap so duong.")
     private int number_of_floors;
     private List<Contract> contractList= new ArrayList<>();
 
@@ -128,28 +133,4 @@ public class ServiceDto implements Validator {
         this.contractList = contractList;
     }
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return false;
-    }
-
-    @Override
-    public void validate(Object target, Errors errors) {
-        ServiceDto serviceDto = (ServiceDto) target;
-        if (serviceDto.getService_area() <= 0){
-            errors.rejectValue("service_area","number.compare","Bị lỗi");
-        }
-        if (serviceDto.getService_cost() <= 0){
-            errors.rejectValue("service_cost","number.compare","Bị lỗi");
-        }
-        if (serviceDto.getService_max_people() <= 0){
-            errors.rejectValue("service_max_people","number.compare","Bị lỗi");
-        }
-        if (serviceDto.getPool_area() <= 0){
-            errors.rejectValue("pool_area","number.compare","Bị lỗi");
-        }
-        if (serviceDto.getNumber_of_floors() <= 0){
-            errors.rejectValue("number_of_floors","number.compare","Bị lỗi");
-        }
-    }
 }
