@@ -21,8 +21,8 @@ public class CustomerUseServiceController {
     private CustomerUseService customerUseService;
 
     @GetMapping("/list")
-    public String list( Model model){
-        List<CustomerUseServiceDto> useServiceDto = customerUseService.findALL();
+    public String list(@PageableDefault(size = 5) Pageable pageable, Model model){
+        Page<CustomerUseServiceDto> useServiceDto = customerUseService.findAllCustomerUseService(pageable);
         model.addAttribute("customerUseServiceDto",useServiceDto);
         return "customerService/list";
     }

@@ -8,5 +8,5 @@ import java.util.List;
 
 
 public interface CustomerUseService {
-    public List<CustomerUseServiceDto> findALL();
+    public Page<CustomerUseServiceDto> findAllCustomerUseService(Pageable pageable);
 }

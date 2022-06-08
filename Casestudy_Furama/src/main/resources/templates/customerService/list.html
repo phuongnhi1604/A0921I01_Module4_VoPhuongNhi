@@ -7,19 +7,15 @@
 <div th:replace="~{template::background}"></div>
 <div class="content">
     <div class="form mt-4 bg-light">
-        <div class="container">
             <div class="mr-3 ml-3">
                 <table class="table table-hover table-fixed">
                     <thead class="thead-dark">
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Birthday</th>
-                        <th>Gender</th>
                         <th>Id_card</th>
                         <th>Phone</th>
                         <th>Email</th>
-                        <th>Address</th>
                         <th>Service Name</th>
                         <th>Attach Service</th>
                     </tr>
@@ -28,36 +24,32 @@
                     <!--Table body-->
                     <tbody>
                     <tr th:each="customer : ${customerUseServiceDto}">
-                        <th scope="row" th:text="${customer.customer_id}"></th>
-                        <td th:text="${customer.customer_name}"></td>
-                        <td th:text="${customer.customer_birthday}"></td>
-                        <td th:if="${customer.customer_gender}">Nam</td>
-                        <td th:if="${!customer.customer_gender}">Nữ</td>
-                        <td th:text="${customer.customer_id_card}"></td>
-                        <td th:text="${customer.customer_phone}"></td>
-                        <td th:text="${customer.customer_email}"></td>
-                        <td th:text="${customer.customer_address}"></td>
-                        <td th:text="${customer.attach_service_name}"></td>
-                        <td th:text="${customer.service_name}"></td>
+                        <th scope="row" th:text="${customer.getCustomer_id()}"></th>
+                        <td th:text="${customer.getCustomer_name()}"></td>
+                        <td th:text="${customer.getCustomer_id_card()}"></td>
+                        <td th:text="${customer.getCustomer_phone()}"></td>
+                        <td th:text="${customer.getCustomer_email()}"></td>
+                        <td th:text="${customer.getService_name()}"></td>
+                        <td th:text="${customer.getAttach_service_name()}"></td>
+
                     </tr>
                     </tbody>
                 </table>
-<!--                <nav class="justify-content-center">-->
-<!--                    <ul class="pagination">-->
-<!--                        <li class="page-item disabled">-->
-<!--                            <a th:href="@{'/customerService/list/'(page=${customerUseServiceDto.number - 1})}"-->
-<!--                               th:if="${customerUseServiceDto.hasPrevious()}">Previous</a>-->
-<!--                        </li>-->
-<!--                        <li class="page-item"><span th:text="${customerUseServiceDto.number + 1}"></span>/<span-->
-<!--                                th:text="${customerUseServiceDto.totalPages}"></span></li>-->
-<!--                        <li class="page-item">-->
-<!--                            <a th:href="@{'/customerService/list/'(page=${customerUseServiceDto.number + 1})}"-->
-<!--                               th:if="${customerUseServiceDto.hasNext()}">Next</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </nav>-->
+                <nav class="justify-content-center">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a th:href="@{'/customerService/list/'(page=${customerUseServiceDto.number - 1})}"
+                               th:if="${customerUseServiceDto.hasPrevious()}">Previous</a>
+                        </li>
+                        <li class="page-item"><span th:text="${customerUseServiceDto.number + 1}"></span>/<span
+                                th:text="${customerUseServiceDto.totalPages}"></span></li>
+                        <li class="page-item">
+                            <a th:href="@{'/customerService/list/'(page=${customerUseServiceDto.number + 1})}"
+                               th:if="${customerUseServiceDto.hasNext()}">Next</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </div>
     </div>
 </div>
 </body>

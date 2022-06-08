@@ -18,7 +18,7 @@ public class CustomerUseServiceImpl implements CustomerUseService{
     private CustomerUseServiceRepository customerUseServiceRepository;
 
     @Override
-    public List<CustomerUseServiceDto> findALL() {
-        return customerUseServiceRepository.findAll();
+    public Page<CustomerUseServiceDto> findAllCustomerUseService(Pageable pageable) {
+        return customerUseServiceRepository.findAllCustomerUseService(pageable);
     }
 }
